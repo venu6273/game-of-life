@@ -6,7 +6,7 @@ node('JDK8'){
         sh 'mvn package'
     }
     stage('archiving and test results'){
-        junit '**/surefie-report/*.xml'
+        junit '**/surefire-report/*.xml'
         archiveArtifacts artifacts: '**/*.war', followSymlinks: false
     }
 }
